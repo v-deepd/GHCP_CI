@@ -54,6 +54,9 @@ jobs:
   deploy:
     runs-on: windows-latest
     needs: build
+    permissions:
+      id-token: write
+      contents: read
     environment:
       name: 'Production'
       url: https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
