@@ -1,0 +1,35 @@
+# ==============================================================================
+# Terraform Variables Example File
+# ==============================================================================
+# Copy this file to terraform.tfvars and update with your values
+# DO NOT commit terraform.tfvars to source control (add to .gitignore)
+# ==============================================================================
+
+# Resource naming
+resource_prefix = "aspnet-migration"
+location        = "East US"
+environment     = "dev"
+
+# App Service configuration
+app_service_sku = "B1" # B1, B2, B3, S1, S2, S3, P1v2, P2v2, P3v2
+
+# SQL Database configuration
+sql_sku            = "Basic" # Basic, S0, S1, S2, S3, P1, P2, P4
+sql_admin_username = "sqladmin"
+sql_admin_password = "YourSecurePassword123!" # Use strong password in production
+
+# Azure AD configuration for SQL Server (optional but recommended)
+sql_aad_admin_login     = "your-admin@yourdomain.com"
+sql_aad_admin_object_id = "00000000-0000-0000-0000-000000000000"
+
+# Azure AD tenant for authentication
+azure_ad_tenant_id = "00000000-0000-0000-0000-000000000000"
+
+# Resource tags
+tags = {
+  Project     = "ASP.NET Migration"
+  Environment = "Development"
+  ManagedBy   = "Terraform"
+  CostCenter  = "IT"
+  Owner       = "Your Team"
+}

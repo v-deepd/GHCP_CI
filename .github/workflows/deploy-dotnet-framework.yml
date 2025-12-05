@@ -1,0 +1,77 @@
+﻿name: Deploy .NET Framework App to Azure
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Use-cases/02-NetFramework30-ASPNET-WEB/**'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_WEBAPP_NAME: webapp-apps-winmig-emea-v-deepd-demo-web
+  AZURE_WEBAPP_PACKAGE_PATH: 'Use-cases/02-NetFramework30-ASPNET-WEB'
+  AZURE_CLIENT_ID: 'd27a4c73-d0da-4636-b677-f08138df4733'
+  AZURE_TENANT_ID: '0e478cd4-3e52-496d-ac3a-419ca58ba7ac'
+  AZURE_SUBSCRIPTION_ID: '95642268-5116-484d-9b88-7dfce8c20ce4'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+      
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
+      
+    - name: Restore NuGet packages
+      run: nuget restore "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.sln"
+      
+    - name: Build solution
+      run: msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.sln" /p:Configuration=Release /p:Platform="Any CPU"
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: webapp
+        path: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
+    
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: webapp
+        path: webapp
+        
+    - name: Azure Login via OIDC
+      uses: azure/login@v2
+      with:
+        client-id: ${{ env.AZURE_CLIENT_ID }}
+        tenant-id: ${{ env.AZURE_TENANT_ID }}
+        subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+        
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        package: webapp
+        
+    - name: Logout from Azure
+      run: az logout
+      if: always()
