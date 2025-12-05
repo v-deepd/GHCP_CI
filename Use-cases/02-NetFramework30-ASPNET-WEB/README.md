@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 5, 2025 - Testing Azure OIDC authentication fix*
+*Last CI/CD deployment test: December 5, 2025 - Testing with Contributor role assigned*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
