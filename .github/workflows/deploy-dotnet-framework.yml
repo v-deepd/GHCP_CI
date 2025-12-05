@@ -74,14 +74,17 @@ jobs:
         enable-AzPSSession: false
         
     - name: Verify Azure Login
-      run: az account show
+      run: |
+        az account show
+        az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo
+        
+    - name: Create deployment package
+      run: |
+        Compress-Archive -Path webapp\* -DestinationPath deploy.zip -Force
         
     - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        package: webapp
+      run: |
+        az webapp deployment source config-zip --resource-group rg-infra-winmig-eme-v-deepd-demo --name ${{ env.AZURE_WEBAPP_NAME }} --src deploy.zip
         
     - name: Logout from Azure
       run: az logout
