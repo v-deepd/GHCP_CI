@@ -35,14 +35,21 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.sln"
       
-    - name: Build solution
-      run: msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.sln" /p:Configuration=Release /p:Platform="Any CPU"
+    - name: Build and publish
+      run: |
+        msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.csproj" `
+          /p:Configuration=Release `
+          /p:Platform="Any CPU" `
+          /p:DeployOnBuild=true `
+          /p:WebPublishMethod=FileSystem `
+          /p:publishUrl="${{ github.workspace }}\publish" `
+          /p:DeleteExistingFiles=True
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: webapp
-        path: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+        path: '${{ github.workspace }}\publish'
 
   deploy:
     runs-on: windows-latest
