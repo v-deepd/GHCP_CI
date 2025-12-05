@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 5, 2025 - Added id-token permission to deploy job*
+*Last CI/CD deployment test: December 5, 2025 - Added detailed debugging for login issue*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

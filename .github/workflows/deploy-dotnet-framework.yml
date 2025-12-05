@@ -74,17 +74,32 @@ jobs:
         client-id: ${{ env.AZURE_CLIENT_ID }}
         tenant-id: ${{ env.AZURE_TENANT_ID }}
         subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
+      continue-on-error: false
         
-    - name: Verify Azure Login and set subscription
+    - name: Debug - Check environment and login
       run: |
-        Write-Host "Checking Azure CLI version..."
+        Write-Host "=== Environment Variables ==="
+        Write-Host "Client ID: ${{ env.AZURE_CLIENT_ID }}"
+        Write-Host "Tenant ID: ${{ env.AZURE_TENANT_ID }}"
+        Write-Host "Subscription ID: ${{ env.AZURE_SUBSCRIPTION_ID }}"
+        Write-Host "`n=== Azure CLI Version ==="
         az --version
-        Write-Host "`nSetting subscription..."
+        Write-Host "`n=== Attempting to show account ==="
+        try {
+          az account show
+          Write-Host "✓ Account show succeeded"
+        } catch {
+          Write-Host "✗ Account show failed: $_"
+          Write-Host "`n=== Attempting manual token login ==="
+          $idToken = $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN
+          Write-Host "ID Token Request Token present: $($null -ne $idToken)"
+        }
+        Write-Host "`n=== Setting subscription explicitly ==="
         az account set --subscription ${{ env.AZURE_SUBSCRIPTION_ID }}
-        Write-Host "`nShowing account details..."
+        Write-Host "`n=== Verifying account after set ==="
         az account show
-        Write-Host "`nVerifying webapp access..."
-        az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo
+        Write-Host "`n=== Checking webapp access ==="
+        az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo --query "{name:name,state:state,hostNames:hostNames}" -o json
         
     - name: Create deployment package
       run: |
