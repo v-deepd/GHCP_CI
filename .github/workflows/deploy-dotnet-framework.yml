@@ -39,7 +39,7 @@ jobs:
       run: |
         msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.csproj" `
           /p:Configuration=Release `
-          /p:Platform="Any CPU" `
+          /p:Platform=AnyCPU `
           /p:DeployOnBuild=true `
           /p:WebPublishMethod=FileSystem `
           /p:publishUrl="${{ github.workspace }}\publish" `
