@@ -1,0 +1,136 @@
+<step title="Incoming Request" date="2025-12-03T11:56:22.121" instance="eef76b" url="/api/publish?type=zip&amp;async=False" method="POST" type="request" pid="5676,2,22" Cache-Control="no-cache" Content-Length="2199642" Content-Type="application/octet-stream" Accept="*/*" Accept-Encoding="gzip, deflate" Authorization="Bea..." Host="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" User-Agent="AZURECLI/2.67.0 (MSI)" x-ms-client-request-id="08c2a48d-d03f-11f0-84e0-7c70dbbf944b" X-ARR-LOG-ID="08c2a48d-d03f-11f0-84e0-7c70dbbf944b" CLIENT-IP="112.121.48.12:29918" X-SITE-DEPLOYMENT-ID="webapp-apps-winmig-emea-v-deepd-demo-web" WAS-DEFAULT-HOSTNAME="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/publish?type=zip&amp;async=False" >
+  <step title="Cleanup Xml Logs" date="2025-12-03T11:56:22.121" /><!-- duration: 16ms -->
+  <step title="OneDeploy" date="2025-12-03T11:56:22.154" >
+    <step title="Starting PushDeployAsync" date="2025-12-03T11:56:22.154" /><!-- duration: 0ms -->
+    <step title="Updating shutdown sentinel last write time" date="2025-12-03T11:56:22.168" SemaphoreCount="7" /><!-- duration: 0ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; acquired" date="2025-12-03T11:56:22.215" /><!-- duration: 0ms -->
+    <step title="Saving request content to C:\local\Temp\zipdeploy\b223ncrb.zip" date="2025-12-03T11:56:22.215" >
+      <step title="Total 2,199,642 bytes written to C:\local\Temp\zipdeploy\b223ncrb.zip" date="2025-12-03T11:56:22.639" /><!-- duration: 0ms -->
+    </step><!-- duration: 438ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; released" date="2025-12-03T11:56:22.652" /><!-- duration: 0ms -->
+    <step title="Deleting shutdown sentinel file" date="2025-12-03T11:56:22.683" SemaphoreCount="8" /><!-- duration: 0ms -->
+    <step title="Starting FetchDeploy" date="2025-12-03T11:56:22.683" /><!-- duration: 16ms -->
+    <step title="Attempting to fetch target branch HEAD" date="2025-12-03T11:56:22.700" /><!-- duration: 0ms -->
+    <step title="Updating shutdown sentinel last write time" date="2025-12-03T11:56:22.715" SemaphoreCount="7" /><!-- duration: 0ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; acquired" date="2025-12-03T11:56:22.715" /><!-- duration: 16ms -->
+    <step title="Performing fetch based deployment" date="2025-12-03T11:56:22.746" >
+      <step title="Creating temporary deployment" date="2025-12-03T11:56:22.746" /><!-- duration: 34ms -->
+      <step title="Fetching changes." date="2025-12-03T11:56:22.824" /><!-- duration: 16ms -->
+      <step title="Starting LocalZipHandler" date="2025-12-03T11:56:22.840" /><!-- duration: 20ms -->
+      <step title="Starting LocalZipFetch" date="2025-12-03T11:56:22.871" /><!-- duration: 0ms -->
+      <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\b223ncrb.zip (2.10 MB) to C:\local\Temp\zipdeploy\extracted" date="2025-12-03T11:56:22.891" /><!-- duration: 0ms -->
+      <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\b223ncrb.zip (2.10 MB) to C:\local\Temp\zipdeploy\extracted" date="2025-12-03T11:56:22.902" >
+        <step title="Renaming extractTargetDirectory(C:\local\Temp\zipdeploy\extracted) to tempDirectory(C:\local\Temp\zipdeploy\5svzfoe2.hc4)" date="2025-12-03T11:56:22.902" /><!-- duration: 0ms -->
+        <step title="Extracting 40 entries to C:\local\Temp\zipdeploy\extracted directory" date="2025-12-03T11:56:22.918" >
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\bin\ApplicationInsights.config ..." date="2025-12-03T11:56:22.981" /><!-- duration: 20ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\bin\Microsoft.AI.Agent.Intercept.dll ..." date="2025-12-03T11:56:23.012" /><!-- duration: 80ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\bin\Microsoft.AI.DependencyCollector.dll ..." date="2025-12-03T11:56:23.105" /><!-- duration: 17ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\bin\Microsoft.AI.DependencyCollector.pdb ..." date="2025-12-03T11:56:23.122" /><!-- duration: 15ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\bin\Microsoft.AI.PerfCounterCollector.dll ..." date="2025-12-03T11:56:23.152" /><!-- duration: 0ms -->
+          <step title="Omitting extracting file traces ..." date="2025-12-03T11:56:23.171" /><!-- duration: 13ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Default.aspx.designer.cs ..." date="2025-12-03T11:56:23.402" /><!-- duration: 31ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Secure.aspx ..." date="2025-12-03T11:56:23.449" /><!-- duration: 0ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Secure.aspx.cs ..." date="2025-12-03T11:56:23.465" /><!-- duration: 0ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Secure.aspx.designer.cs ..." date="2025-12-03T11:56:23.465" /><!-- duration: 0ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Web.config ..." date="2025-12-03T11:56:23.480" /><!-- duration: 0ms -->
+        </step><!-- duration: 563ms -->
+      </step><!-- duration: 578ms -->
+      <step title="None repository commit" date="2025-12-03T11:56:23.480" >
+        <step title="Commit id: 8a4882bb7af0406b81bd0d7612264e5e" date="2025-12-03T11:56:23.496" Message="OneDeploy" AuthorName="N/A" AuthorEmail="N/A" /><!-- duration: 0ms -->
+      </step><!-- duration: 16ms -->
+      <step title="Before sending BuildRequestReceived status to /api/updatedeploystatus" date="2025-12-03T11:56:23.496" /><!-- duration: 0ms -->
+      <step title="DeploymentManager.Deploy(id:8a4882bb7af0406b81bd0d7612264e5e)" date="2025-12-03T11:56:23.512" >
+        <step title="Collecting changeset information" date="2025-12-03T11:56:23.512" /><!-- duration: 78ms -->
+        <step title="Updating submodules" date="2025-12-03T11:56:23.590" >
+          <step title="Updating submodules." date="2025-12-03T11:56:23.701" /><!-- duration: 0ms -->
+        </step><!-- duration: 141ms -->
+        <step title="Preparing deployment for commit id &apos;8a4882bb7a&apos;." date="2025-12-03T11:56:23.793" /><!-- duration: 0ms -->
+        <step title="Determining deployment builder" date="2025-12-03T11:56:23.855" >
+          <step title="Builder is OneDeployBuilder" date="2025-12-03T11:56:23.855" /><!-- duration: 16ms -->
+        </step><!-- duration: 16ms -->
+        <step title="Copying SSH keys" date="2025-12-03T11:56:23.902" /><!-- duration: 20ms -->
+        <step title="Building" date="2025-12-03T11:56:23.933" >
+          <step title="Running build. Project type: OneDeploy" date="2025-12-03T11:56:23.965" /><!-- duration: 0ms -->
+          <step title="Copying the manifest" date="2025-12-03T11:56:24.027" /><!-- duration: 16ms -->
+          <step title="Clean deploying to C:\home\site\wwwroot" date="2025-12-03T11:56:24.137" /><!-- duration: 0ms -->
+          <step title="Generating deployment script." date="2025-12-03T11:56:24.199" /><!-- duration: 0ms -->
+          <step title="Generating deployment script" date="2025-12-03T11:56:24.216" >
+            <step title="Using cached version of the deployment script for command: -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --basic --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;" date="2025-12-03T11:56:24.262" /><!-- duration: 0ms -->
+            <step title="Using cached version of deployment script (command: &apos;azure -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --basic --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;&apos;)." date="2025-12-03T11:56:24.277" /><!-- duration: 0ms -->
+          </step><!-- duration: 77ms -->
+          <step title="Running deployment command..." date="2025-12-03T11:56:24.340" /><!-- duration: 0ms -->
+          <step title="Command: &quot;C:\home\site\deployments\tools\deploy.cmd&quot;" date="2025-12-03T11:56:24.355" /><!-- duration: 16ms -->
+          <step title="Executing external process" date="2025-12-03T11:56:24.387" type="process" path="starter.cmd" arguments="&quot;C:\home\site\deployments\tools\deploy.cmd&quot;" >
+            <step title="Handling Basic Web Site deployment." date="2025-12-03T11:56:24.872" /><!-- duration: 0ms -->
+            <step title="Creating app_offline.htm" date="2025-12-03T11:56:25.355" /><!-- duration: 0ms -->
+            <step title="KuduSync.NET from: &apos;C:\local\Temp\zipdeploy\extracted&apos; to: &apos;C:\home\site\wwwroot&apos;" date="2025-12-03T11:56:25.391" /><!-- duration: 11ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\About.aspx&apos;" date="2025-12-03T11:56:25.421" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\AccessDenied.aspx&apos;" date="2025-12-03T11:56:25.433" /><!-- duration: 16ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\Default.aspx&apos;" date="2025-12-03T11:56:25.465" /><!-- duration: 17ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\Secure.aspx&apos;" date="2025-12-03T11:56:25.512" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\Web.config&apos;" date="2025-12-03T11:56:25.543" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.Agent.Intercept.dll&apos;" date="2025-12-03T11:56:25.574" /><!-- duration: 18ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.DependencyCollector.dll&apos;" date="2025-12-03T11:56:25.652" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.DependencyCollector.pdb&apos;" date="2025-12-03T11:56:25.683" /><!-- duration: 19ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.PerfCounterCollector.dll&apos;" date="2025-12-03T11:56:25.732" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.PerfCounterCollector.pdb&apos;" date="2025-12-03T11:56:25.763" /><!-- duration: 20ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.ServerTelemetryChannel.dll&apos;" date="2025-12-03T11:56:25.813" /><!-- duration: 11ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.ServerTelemetryChannel.pdb&apos;" date="2025-12-03T11:56:25.843" /><!-- duration: 12ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.Web.dll&apos;" date="2025-12-03T11:56:25.873" /><!-- duration: 14ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.Web.pdb&apos;" date="2025-12-03T11:56:25.923" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.WindowsServer.dll&apos;" date="2025-12-03T11:56:25.934" /><!-- duration: 20ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.WindowsServer.pdb&apos;" date="2025-12-03T11:56:25.984" /><!-- duration: 12ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.ApplicationInsights.dll&apos;" date="2025-12-03T11:56:26.014" /><!-- duration: 13ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.ApplicationInsights.pdb&apos;" date="2025-12-03T11:56:26.044" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.ApplicationInsights.TraceListener.dll&apos;" date="2025-12-03T11:56:26.058" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.ApplicationInsights.TraceListener.pdb&apos;" date="2025-12-03T11:56:26.094" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.TelemetryCorrelation.dll&apos;" date="2025-12-03T11:56:26.168" /><!-- duration: 17ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\NetFramework30ASPNETWEB.dll&apos;" date="2025-12-03T11:56:26.215" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\NetFramework30ASPNETWEB.pdb&apos;" date="2025-12-03T11:56:26.246" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\System.Buffers.dll&apos;" date="2025-12-03T11:56:26.295" /><!-- duration: 13ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\System.Diagnostics.DiagnosticSource.dll&apos;" date="2025-12-03T11:56:26.355" /><!-- duration: 20ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\System.Memory.dll&apos;" date="2025-12-03T11:56:26.406" /><!-- duration: 12ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\System.Numerics.Vectors.dll&apos;" date="2025-12-03T11:56:26.449" /><!-- duration: 17ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\System.Runtime.CompilerServices.Unsafe.dll&apos;" date="2025-12-03T11:56:26.496" /><!-- duration: 0ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin&apos;" date="2025-12-03T11:56:26.546" /><!-- duration: 12ms -->
+            <step title="Deleting file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\Styles\Site.css&apos;" date="2025-12-03T11:56:26.590" /><!-- duration: 17ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\Styles&apos;" date="2025-12-03T11:56:26.637" /><!-- duration: 20ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp&apos;" date="2025-12-03T11:56:26.687" /><!-- duration: 30ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package&apos;" date="2025-12-03T11:56:26.828" /><!-- duration: 0ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release&apos;" date="2025-12-03T11:56:26.858" /><!-- duration: 13ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj&apos;" date="2025-12-03T11:56:26.888" /><!-- duration: 30ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady&apos;" date="2025-12-03T11:56:26.998" /><!-- duration: 13ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB&apos;" date="2025-12-03T11:56:27.049" /><!-- duration: 10ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases&apos;" date="2025-12-03T11:56:27.074" /><!-- duration: 16ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI&apos;" date="2025-12-03T11:56:27.169" /><!-- duration: 0ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main&apos;" date="2025-12-03T11:56:27.199" /><!-- duration: 20ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo\MSDemo&apos;" date="2025-12-03T11:56:27.230" /><!-- duration: 19ms -->
+            <step title="Deleting directory: &apos;Content\C_C\Code repo&apos;" date="2025-12-03T11:56:27.280" /><!-- duration: 13ms -->
+            <step title="Deleting directory: &apos;Content\C_C&apos;" date="2025-12-03T11:56:27.310" /><!-- duration: 0ms -->
+            <step title="Deleting directory: &apos;Content&apos;" date="2025-12-03T11:56:27.324" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;archive.xml&apos;" date="2025-12-03T11:56:27.340" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;parameters.xml&apos;" date="2025-12-03T11:56:27.355" /><!-- duration: 0ms -->
+            <step title="Deleting file: &apos;systemInfo.xml&apos;" date="2025-12-03T11:56:27.371" /><!-- duration: 0ms -->
+            <step title="Copying file: &apos;About.aspx&apos;" date="2025-12-03T11:56:27.387" /><!-- duration: 0ms -->
+            <step title="Omitting next output lines..." date="2025-12-03T11:56:27.402" /><!-- duration: 0ms -->
+            <step title="Finished successfully." date="2025-12-03T11:56:27.418" /><!-- duration: 0ms -->
+          </step><!-- duration: 3031ms -->
+          <step title="Build completed succesfully." date="2025-12-03T11:56:27.465" /><!-- duration: 0ms -->
+          <step title="Running post deployment command(s)..." date="2025-12-03T11:56:27.559" /><!-- duration: 0ms -->
+          <step title="Requesting site restart" date="2025-12-03T11:56:27.656" /><!-- duration: 11ms -->
+          <step title="Requesting site restart" date="2025-12-03T11:56:27.668" /><!-- duration: 0ms -->
+          <step title="Requesting site restart. Attempt #1" date="2025-12-03T11:56:27.730" /><!-- duration: 0ms -->
+          <step title="Requesting site restart. Attempt #1" date="2025-12-03T11:56:27.746" /><!-- duration: 0ms -->
+          <step title="Successfully requested a restart. Attempt #1" date="2025-12-03T11:56:27.871" /><!-- duration: 0ms -->
+          <step title="Successfully requested a restart. Attempt #1" date="2025-12-03T11:56:27.888" /><!-- duration: 0ms -->
+          <step title="Deployment successful. DEPLOYMENTINFO: deploymentPath = OneDeploy, deployer = OneDeploy, os = windows, sku = Standard, siteName = webapp-apps-winmig-emea-v-deepd-demo-web, siteHostName = webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.canadacentral-01.azurewebsites.net, deploymentStatus = Success" date="2025-12-03T11:56:27.949" /><!-- duration: 0ms -->
+        </step><!-- duration: 4188ms -->
+      </step><!-- duration: 4628ms -->
+      <step title="Cleaning up temp files" date="2025-12-03T11:56:28.140" /><!-- duration: 13ms -->
+      <step title="Skip function trigger and logicapp sync because function is not enabled." date="2025-12-03T11:56:28.152" /><!-- duration: 0ms -->
+    </step><!-- duration: 5469ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; released" date="2025-12-03T11:56:28.230" /><!-- duration: 0ms -->
+    <step title="Deleting shutdown sentinel file" date="2025-12-03T11:56:28.230" SemaphoreCount="8" /><!-- duration: 0ms -->
+  </step><!-- duration: 6092ms -->
+  <step title="Outgoing response" date="2025-12-03T11:56:28.262" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/10.0" x-ms-request-id="08c2a48d-d03f-11f0-84e0-7c70dbbf944b" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 0ms -->
+</step><!-- duration: 6156ms -->

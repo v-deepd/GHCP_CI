@@ -1,0 +1,89 @@
+<step title="Incoming Request" date="2025-12-03T11:44:56.271" instance="eef76b" url="/api/publish?type=zip&amp;async=False" method="POST" type="request" pid="5676,2,12" Cache-Control="no-cache" Content-Length="2202007" Content-Type="application/octet-stream" Accept="*/*" Accept-Encoding="gzip, deflate" Authorization="Bea..." Host="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" User-Agent="AZURECLI/2.67.0 (MSI)" x-ms-client-request-id="6ffeb647-d03d-11f0-b4ed-7c70dbbf944b" X-ARR-LOG-ID="6ffeb647-d03d-11f0-b4ed-7c70dbbf944b" CLIENT-IP="112.121.48.12:60164" X-SITE-DEPLOYMENT-ID="webapp-apps-winmig-emea-v-deepd-demo-web" WAS-DEFAULT-HOSTNAME="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/publish?type=zip&amp;async=False" >
+  <step title="Cleanup Xml Logs" date="2025-12-03T11:44:56.271" /><!-- duration: 11ms -->
+  <step title="OneDeploy" date="2025-12-03T11:44:56.564" >
+    <step title="Starting PushDeployAsync" date="2025-12-03T11:44:56.657" /><!-- duration: 16ms -->
+    <step title="Updating shutdown sentinel last write time" date="2025-12-03T11:44:56.895" SemaphoreCount="7" /><!-- duration: 0ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; acquired" date="2025-12-03T11:44:56.895" /><!-- duration: 12ms -->
+    <step title="Saving request content to C:\local\Temp\zipdeploy\2zt1o1nc.zip" date="2025-12-03T11:44:56.907" >
+      <step title="Total 2,202,007 bytes written to C:\local\Temp\zipdeploy\2zt1o1nc.zip" date="2025-12-03T11:44:57.065" /><!-- duration: 19ms -->
+    </step><!-- duration: 176ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; released" date="2025-12-03T11:44:57.095" /><!-- duration: 0ms -->
+    <step title="Deleting shutdown sentinel file" date="2025-12-03T11:44:57.111" SemaphoreCount="8" /><!-- duration: 0ms -->
+    <step title="Starting FetchDeploy" date="2025-12-03T11:44:57.111" /><!-- duration: 16ms -->
+    <step title="Attempting to fetch target branch HEAD" date="2025-12-03T11:44:57.126" /><!-- duration: 16ms -->
+    <step title="Updating shutdown sentinel last write time" date="2025-12-03T11:44:57.157" SemaphoreCount="7" /><!-- duration: 16ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; acquired" date="2025-12-03T11:44:57.173" /><!-- duration: 0ms -->
+    <step title="Performing fetch based deployment" date="2025-12-03T11:44:57.189" >
+      <step title="Creating temporary deployment" date="2025-12-03T11:44:57.204" /><!-- duration: 141ms -->
+      <step title="Fetching changes." date="2025-12-03T11:44:57.486" /><!-- duration: 17ms -->
+      <step title="Starting LocalZipHandler" date="2025-12-03T11:44:57.517" /><!-- duration: 0ms -->
+      <step title="Starting LocalZipFetch" date="2025-12-03T11:44:57.533" /><!-- duration: 0ms -->
+      <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\2zt1o1nc.zip (2.10 MB) to C:\local\Temp\zipdeploy\extracted" date="2025-12-03T11:44:57.583" /><!-- duration: 12ms -->
+      <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file C:\local\Temp\zipdeploy\2zt1o1nc.zip (2.10 MB) to C:\local\Temp\zipdeploy\extracted" date="2025-12-03T11:44:57.611" >
+        <step title="Extracting 35 entries to C:\local\Temp\zipdeploy\extracted directory" date="2025-12-03T11:44:57.643" >
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\archive.xml ..." date="2025-12-03T11:44:57.657" /><!-- duration: 36ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\About.aspx ..." date="2025-12-03T11:44:57.739" /><!-- duration: 13ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\AccessDenied.aspx ..." date="2025-12-03T11:44:57.769" /><!-- duration: 0ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.Agent.Intercept.dll ..." date="2025-12-03T11:44:57.782" /><!-- duration: 78ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\Microsoft.AI.DependencyCollector.dll ..." date="2025-12-03T11:44:57.879" /><!-- duration: 0ms -->
+          <step title="Omitting extracting file traces ..." date="2025-12-03T11:44:57.892" /><!-- duration: 18ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\parameters.xml ..." date="2025-12-03T11:44:58.191" /><!-- duration: 0ms -->
+          <step title="Extracting to C:\local\Temp\zipdeploy\extracted\systemInfo.xml ..." date="2025-12-03T11:44:58.204" /><!-- duration: 0ms -->
+        </step><!-- duration: 561ms -->
+      </step><!-- duration: 594ms -->
+      <step title="None repository commit" date="2025-12-03T11:44:58.220" >
+        <step title="Commit id: 47994bbba02747d89fbab364bfc98948" date="2025-12-03T11:44:58.220" Message="OneDeploy" AuthorName="N/A" AuthorEmail="N/A" /><!-- duration: 0ms -->
+      </step><!-- duration: 16ms -->
+      <step title="Before sending BuildRequestReceived status to /api/updatedeploystatus" date="2025-12-03T11:44:58.236" /><!-- duration: 0ms -->
+      <step title="DeploymentManager.Deploy(id:47994bbba02747d89fbab364bfc98948)" date="2025-12-03T11:44:58.252" >
+        <step title="Collecting changeset information" date="2025-12-03T11:44:58.267" /><!-- duration: 48ms -->
+        <step title="Updating submodules" date="2025-12-03T11:44:58.314" >
+          <step title="Updating submodules." date="2025-12-03T11:44:58.407" /><!-- duration: 0ms -->
+        </step><!-- duration: 111ms -->
+        <step title="Preparing deployment for commit id &apos;47994bbba0&apos;." date="2025-12-03T11:44:58.501" /><!-- duration: 0ms -->
+        <step title="Determining deployment builder" date="2025-12-03T11:44:58.580" >
+          <step title="Builder is OneDeployBuilder" date="2025-12-03T11:44:58.580" /><!-- duration: 31ms -->
+        </step><!-- duration: 31ms -->
+        <step title="Copying SSH keys" date="2025-12-03T11:44:58.626" /><!-- duration: 16ms -->
+        <step title="Building" date="2025-12-03T11:44:58.642" >
+          <step title="Running build. Project type: OneDeploy" date="2025-12-03T11:44:58.704" /><!-- duration: 0ms -->
+          <step title="Copying the manifest" date="2025-12-03T11:44:58.798" /><!-- duration: 0ms -->
+          <step title="Clean deploying to C:\home\site\wwwroot" date="2025-12-03T11:44:58.893" /><!-- duration: 14ms -->
+          <step title="Generating deployment script." date="2025-12-03T11:44:58.970" /><!-- duration: 16ms -->
+          <step title="Generating deployment script" date="2025-12-03T11:44:59.004" >
+            <step title="Using cached version of the deployment script for command: -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --basic --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;" date="2025-12-03T11:44:59.205" /><!-- duration: 20ms -->
+            <step title="Using cached version of deployment script (command: &apos;azure -y --no-dot-deployment -r &quot;C:\local\Temp\zipdeploy\extracted&quot; -o &quot;C:\home\site\deployments\tools&quot; --basic --sitePath &quot;C:\local\Temp\zipdeploy\extracted&quot;&apos;)." date="2025-12-03T11:44:59.236" /><!-- duration: 16ms -->
+          </step><!-- duration: 263ms -->
+          <step title="Running deployment command..." date="2025-12-03T11:44:59.314" /><!-- duration: 0ms -->
+          <step title="Command: &quot;C:\home\site\deployments\tools\deploy.cmd&quot;" date="2025-12-03T11:44:59.345" /><!-- duration: 0ms -->
+          <step title="Executing external process" date="2025-12-03T11:44:59.414" type="process" path="starter.cmd" arguments="&quot;C:\home\site\deployments\tools\deploy.cmd&quot;" >
+            <step title="Handling Basic Web Site deployment." date="2025-12-03T11:45:00.132" /><!-- duration: 30ms -->
+            <step title="Creating app_offline.htm" date="2025-12-03T11:45:00.865" /><!-- duration: 0ms -->
+            <step title="KuduSync.NET from: &apos;C:\local\Temp\zipdeploy\extracted&apos; to: &apos;C:\home\site\wwwroot&apos;" date="2025-12-03T11:45:00.896" /><!-- duration: 0ms -->
+            <step title="Copying file: &apos;archive.xml&apos;" date="2025-12-03T11:45:00.944" /><!-- duration: 14ms -->
+            <step title="Copying file: &apos;parameters.xml&apos;" date="2025-12-03T11:45:00.959" /><!-- duration: 16ms -->
+            <step title="Copying file: &apos;systemInfo.xml&apos;" date="2025-12-03T11:45:00.990" /><!-- duration: 0ms -->
+            <step title="Copying file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\NetFramework30ASPNETWEB.dll&apos;" date="2025-12-03T11:45:01.005" /><!-- duration: 0ms -->
+            <step title="Copying file: &apos;Content\C_C\Code repo\MSDemo\GHCP-PromptMigration-main\GHCP_CI\Use-cases\02-NetFramework30-ASPNET-WEB\NetFramework48-Modernized-AzureReady\obj\Release\Package\PackageTmp\bin\NetFramework30ASPNETWEB.pdb&apos;" date="2025-12-03T11:45:01.021" /><!-- duration: 0ms -->
+            <step title="Deleting app_offline.htm" date="2025-12-03T11:45:01.037" /><!-- duration: 0ms -->
+            <step title="Finished successfully." date="2025-12-03T11:45:01.052" /><!-- duration: 0ms -->
+          </step><!-- duration: 1654ms -->
+          <step title="Build completed succesfully." date="2025-12-03T11:45:01.147" /><!-- duration: 31ms -->
+          <step title="Running post deployment command(s)..." date="2025-12-03T11:45:01.508" /><!-- duration: 0ms -->
+          <step title="Requesting site restart" date="2025-12-03T11:45:01.662" /><!-- duration: 0ms -->
+          <step title="Requesting site restart" date="2025-12-03T11:45:01.677" /><!-- duration: 16ms -->
+          <step title="Requesting site restart. Attempt #1" date="2025-12-03T11:45:01.787" /><!-- duration: 0ms -->
+          <step title="Requesting site restart. Attempt #1" date="2025-12-03T11:45:01.853" /><!-- duration: 12ms -->
+          <step title="Successfully requested a restart. Attempt #1" date="2025-12-03T11:45:03.662" /><!-- duration: 0ms -->
+          <step title="Successfully requested a restart. Attempt #1" date="2025-12-03T11:45:03.693" /><!-- duration: 19ms -->
+          <step title="Deployment successful. DEPLOYMENTINFO: deploymentPath = OneDeploy, deployer = OneDeploy, os = windows, sku = Standard, siteName = webapp-apps-winmig-emea-v-deepd-demo-web, siteHostName = webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.canadacentral-01.azurewebsites.net, deploymentStatus = Success" date="2025-12-03T11:45:03.853" /><!-- duration: 12ms -->
+        </step><!-- duration: 5645ms -->
+      </step><!-- duration: 6053ms -->
+      <step title="Cleaning up temp files" date="2025-12-03T11:45:04.335" /><!-- duration: 0ms -->
+      <step title="Skip function trigger and logicapp sync because function is not enabled." date="2025-12-03T11:45:04.365" /><!-- duration: 20ms -->
+    </step><!-- duration: 7338ms -->
+    <step title="LockFile &apos;C:\home\site\locks\deployments.lock&apos; released" date="2025-12-03T11:45:04.537" /><!-- duration: 20ms -->
+    <step title="Deleting shutdown sentinel file" date="2025-12-03T11:45:04.617" SemaphoreCount="8" /><!-- duration: 20ms -->
+  </step><!-- duration: 8083ms -->
+  <step title="Outgoing response" date="2025-12-03T11:45:04.677" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/10.0" x-ms-request-id="6ffeb647-d03d-11f0-b4ed-7c70dbbf944b" Cache-Control="private" X-AspNet-Version="4.0.30319" /><!-- duration: 20ms -->
+</step><!-- duration: 8437ms -->

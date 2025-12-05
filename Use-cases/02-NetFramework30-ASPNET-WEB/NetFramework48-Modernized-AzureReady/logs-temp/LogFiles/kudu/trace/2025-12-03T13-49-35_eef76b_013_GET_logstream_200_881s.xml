@@ -1,0 +1,9 @@
+<step title="Incoming Request" date="2025-12-03T13:49:35.846" instance="eef76b" url="/logstream" method="GET" type="request" pid="7980,2,12" Accept-Encoding="identity" Authorization="Bea..." Host="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" User-Agent="AZURECLI/2.67.0 (MSI)" x-ms-client-request-id="d3b63eeb-d04e-11f0-bfc7-7c70dbbf944b" X-ARR-LOG-ID="d3b63eeb-d04e-11f0-bfc7-7c70dbbf944b" CLIENT-IP="112.121.48.12:20769" X-SITE-DEPLOYMENT-ID="webapp-apps-winmig-emea-v-deepd-demo-web" WAS-DEFAULT-HOSTNAME="webapp-apps-winmig-emea-v-deepd-demo-web-aye7gxb4b4htb8fh.scm.canadacentral-01.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/logstream" >
+  <step title="Cleanup Xml Logs" date="2025-12-03T13:49:35.846" /><!-- duration: 16ms -->
+  <step title="LogStreamHandler.BeginProcessRequest" date="2025-12-03T13:49:35.893" >
+    <step title="LockFile &apos;C:\home\site\locks\hooks.lock&apos; acquired" date="2025-12-03T13:49:36.002" /><!-- duration: 16ms -->
+    <step title="LockFile &apos;C:\home\site\locks\hooks.lock&apos; released" date="2025-12-03T13:49:36.268" /><!-- duration: 0ms -->
+  </step><!-- duration: 375ms -->
+  <step title="LogStreamHandler.EndProcessRequest" date="2025-12-03T14:04:16.830" /><!-- duration: 0ms -->
+  <step title="Outgoing response" date="2025-12-03T14:04:16.845" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/10.0" Cache-Control="private" X-AspNet-Version="4.0.30319" Content-Type="text/plain; charset=utf-8" /><!-- duration: 0ms -->
+</step><!-- duration: 880999ms -->
