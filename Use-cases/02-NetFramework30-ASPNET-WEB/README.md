@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 5, 2025 - Testing fixed publish workflow*
+*Last CI/CD deployment test: December 5, 2025 - Testing with AnyCPU platform fix*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
