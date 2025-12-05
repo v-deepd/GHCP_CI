@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 5, 2025 - Using Azure CLI for deployment*
+*Last CI/CD deployment test: December 5, 2025 - Testing with azure/login@v1 and explicit subscription set*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
