@@ -65,8 +65,9 @@ namespace NetFramework30ASPNETWEB
                         { "Timestamp", DateTime.UtcNow.ToString("o") }
                     });
                     
-                    // Azure Migration Note: Display message instead of redirect when Azure AD Easy Auth is not configured
-                    // This allows the page to be accessible for demonstration purposes
+                    // Azure Migration: With Azure AD Easy Auth enabled, unauthenticated users should not reach here
+                    // Easy Auth redirects to login before reaching the application
+                    // Display message as fallback
                     DisplayAnonymousUserInformation();
                     return;
                 }
@@ -216,19 +217,20 @@ namespace NetFramework30ASPNETWEB
 
         /// <summary>
         /// Displays information for anonymous (unauthenticated) users.
-        /// Azure Migration: Added to support demonstration when Azure AD Easy Auth is not configured.
+        /// Azure Migration: Fallback for when Azure AD Easy Auth is misconfigured or user bypasses authentication.
+        /// With proper Easy Auth configuration, users should be redirected to login before reaching here.
         /// </summary>
         private void DisplayAnonymousUserInformation()
         {
             UserNameLabel.Text = "Anonymous (Not Authenticated)";
-            AuthTypeLabel.Text = "None - Azure AD Easy Auth not configured";
+            AuthTypeLabel.Text = "Azure AD Easy Auth - User not authenticated";
             IsAuthenticatedLabel.Text = "No";
-            AuthorizationStatusLabel.Text = "Not Authenticated";
-            AuthorizationStatusLabel.ForeColor = System.Drawing.Color.Orange;
+            AuthorizationStatusLabel.Text = "Authentication Required";
+            AuthorizationStatusLabel.ForeColor = System.Drawing.Color.Red;
             
             GroupsList.Items.Clear();
-            GroupsList.Items.Add("No authentication configured");
-            GroupsList.Items.Add("To enable authentication, configure Azure AD Easy Auth in Azure Portal");
+            GroupsList.Items.Add("Please sign in to view your roles and groups");
+            GroupsList.Items.Add("Azure AD Easy Auth should redirect you to login automatically");
             
             SecretPanel.Visible = false;
             UnauthorizedPanel.Visible = true;

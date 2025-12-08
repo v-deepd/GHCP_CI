@@ -36,7 +36,10 @@
             <div class="content">
                 <h2>Secure Page</h2>
                 <p>
-                    This is a secure page that can only be accessed by authenticated users who are members of specific Windows groups.
+                    This is a secure page that requires Azure AD authentication. Access is restricted to users with specific Azure AD roles.
+                </p>
+                <p>
+                    <strong>Required Roles:</strong> SecureAppUsers or AppAdministrators
                 </p>
                 <h3>Your Authentication Information</h3>
                 <div class="userInfo">
@@ -67,15 +70,14 @@
                 </asp:Panel>
                 <asp:Panel ID="UnauthorizedPanel" runat="server" Visible="false">
                     <p class="error">
-                        You are not authorized to view the secret content.
+                        You are authenticated but not authorized to view the secret content.
                     </p>
                     <p>
-                        <strong>Note:</strong> This page requires Azure AD authentication to be configured.
-                        To enable authentication, configure Azure AD Easy Auth in the Azure Portal.
-                    </p>
-                    <p>
-                        Once configured, you must be a member of one of these Azure AD roles:
+                        <strong>Authorization Required:</strong> You must be a member of one of these Azure AD roles:
                         <strong>SecureAppUsers</strong> or <strong>AppAdministrators</strong>
+                    </p>
+                    <p>
+                        Please contact your administrator to request access to the appropriate Azure AD role.
                     </p>
                 </asp:Panel>
             </div>
