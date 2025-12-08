@@ -37,13 +37,32 @@ jobs:
       
     - name: Build and publish
       run: |
+        Write-Host "Building project..."
         msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.csproj" `
           /p:Configuration=Release `
           /p:Platform=AnyCPU `
           /p:DeployOnBuild=true `
           /p:WebPublishMethod=FileSystem `
-          /p:publishUrl="${{ github.workspace }}\publish" `
-          /p:DeleteExistingFiles=True
+          /p:PublishUrl="${{ github.workspace }}\publish" `
+          /p:DeleteExistingFiles=True `
+          /verbosity:minimal
+          
+        Write-Host "`nChecking publish folder..."
+        if (Test-Path "${{ github.workspace }}\publish") {
+          $files = Get-ChildItem "${{ github.workspace }}\publish" -Recurse
+          Write-Host "Files in publish folder: $($files.Count)"
+          $files | Select-Object -First 10 | ForEach-Object { Write-Host "  $_" }
+        } else {
+          Write-Host "ERROR: Publish folder does not exist!"
+          Write-Host "Trying alternative publish location..."
+          if (Test-Path "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\bin\Release\PublishOutput") {
+            Write-Host "Found files in bin\Release\PublishOutput"
+            Copy-Item "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\bin\Release\PublishOutput\*" -Destination "${{ github.workspace }}\publish" -Recurse -Force
+          } else {
+            Write-Host "Checking bin folder contents..."
+            Get-ChildItem "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\bin" -Recurse | Select-Object -First 20
+          }
+        }
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
