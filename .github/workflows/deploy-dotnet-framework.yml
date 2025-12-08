@@ -69,11 +69,28 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      id: azure-login
+      continue-on-error: true
+        
+    - name: Manual Azure CLI Login (fallback)
+      if: steps.azure-login.outcome == 'failure'
+      run: |
+        Write-Host "Azure login action failed, attempting manual login..."
+        az login --service-principal -u ${{ env.AZURE_CLIENT_ID }} -p "$env:AZURE_CLIENT_SECRET" --tenant ${{ env.AZURE_TENANT_ID }}
+        az account set --subscription ${{ env.AZURE_SUBSCRIPTION_ID }}
+      env:
+        AZURE_CLIENT_SECRET: ${{ fromJSON(secrets.AZURE_CREDENTIALS).clientSecret }}
         
     - name: Verify Azure Login
       run: |
         Write-Host "Verifying Azure account..."
-        az account show
+        $account = az account show 2>&1
+        if ($LASTEXITCODE -ne 0) {
+          Write-Host "ERROR: Azure account show failed"
+          Write-Host $account
+          exit 1
+        }
+        Write-Host $account
         Write-Host "`nChecking web app..."
         az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo --query "{name:name,state:state}" -o json
         
