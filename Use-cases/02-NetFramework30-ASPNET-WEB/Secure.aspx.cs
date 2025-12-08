@@ -65,8 +65,9 @@ namespace NetFramework30ASPNETWEB
                         { "Timestamp", DateTime.UtcNow.ToString("o") }
                     });
                     
-                    // BUSINESS LOGIC PRESERVED: Redirect to home page if not authenticated
-                    Response.Redirect("~/Default.aspx");
+                    // Azure Migration Note: Display message instead of redirect when Azure AD Easy Auth is not configured
+                    // This allows the page to be accessible for demonstration purposes
+                    DisplayAnonymousUserInformation();
                     return;
                 }
 
@@ -211,6 +212,26 @@ namespace NetFramework30ASPNETWEB
                 GroupsList.Items.Add($"Error retrieving roles: {ex.Message}");
                 telemetry.TrackException(ex);
             }
+        }
+
+        /// <summary>
+        /// Displays information for anonymous (unauthenticated) users.
+        /// Azure Migration: Added to support demonstration when Azure AD Easy Auth is not configured.
+        /// </summary>
+        private void DisplayAnonymousUserInformation()
+        {
+            UserNameLabel.Text = "Anonymous (Not Authenticated)";
+            AuthTypeLabel.Text = "None - Azure AD Easy Auth not configured";
+            IsAuthenticatedLabel.Text = "No";
+            AuthorizationStatusLabel.Text = "Not Authenticated";
+            AuthorizationStatusLabel.ForeColor = System.Drawing.Color.Orange;
+            
+            GroupsList.Items.Clear();
+            GroupsList.Items.Add("No authentication configured");
+            GroupsList.Items.Add("To enable authentication, configure Azure AD Easy Auth in Azure Portal");
+            
+            SecretPanel.Visible = false;
+            UnauthorizedPanel.Visible = true;
         }
 
         /// <summary>

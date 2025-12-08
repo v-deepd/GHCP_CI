@@ -67,10 +67,15 @@
                 </asp:Panel>
                 <asp:Panel ID="UnauthorizedPanel" runat="server" Visible="false">
                     <p class="error">
-                        You are authenticated but not authorized to view the secret content.
+                        You are not authorized to view the secret content.
                     </p>
                     <p>
-                        You must be a member of one of the authorized Windows groups to see the secret content.
+                        <strong>Note:</strong> This page requires Azure AD authentication to be configured.
+                        To enable authentication, configure Azure AD Easy Auth in the Azure Portal.
+                    </p>
+                    <p>
+                        Once configured, you must be a member of one of these Azure AD roles:
+                        <strong>SecureAppUsers</strong> or <strong>AppAdministrators</strong>
                     </p>
                 </asp:Panel>
             </div>
