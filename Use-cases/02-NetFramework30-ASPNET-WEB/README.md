@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 8, 2025 - Fixed publish folder detection and fallback*
+*Last CI/CD deployment test: December 8, 2025 - Using PackageTmp folder for deployment files*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
