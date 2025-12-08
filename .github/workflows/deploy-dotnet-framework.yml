@@ -35,14 +35,17 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.sln"
       
-    - name: Build and publish
+    - name: Build solution
       run: |
-        Write-Host "Building project..."
+        Write-Host "Building and packaging project..."
         msbuild "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/NetFramework30ASPNETWEB.csproj" `
           /p:Configuration=Release `
           /p:Platform=AnyCPU `
           /p:DeployOnBuild=true `
-          /p:PublishProfile=FolderProfile `
+          /p:WebPublishMethod=Package `
+          /p:PackageAsSingleFile=true `
+          /p:SkipInvalidConfigurations=true `
+          /p:PackageLocation="${{ github.workspace }}\WebPackage" `
           /verbosity:minimal
           
         Write-Host "`nCopying files from PackageTmp to publish folder..."
@@ -50,6 +53,7 @@ jobs:
         $publishFolder = "${{ github.workspace }}\publish"
         
         if (Test-Path $packageTmp) {
+          Write-Host "Found PackageTmp folder, copying files..."
           New-Item -ItemType Directory -Force -Path $publishFolder | Out-Null
           Copy-Item "$packageTmp\*" -Destination $publishFolder -Recurse -Force
           
@@ -59,6 +63,8 @@ jobs:
           $files | Select-Object -First 10 | ForEach-Object { Write-Host "  $($_.FullName.Replace($publishFolder, ''))" }
         } else {
           Write-Host "ERROR: PackageTmp folder not found at $packageTmp"
+          Write-Host "Checking what was created..."
+          Get-ChildItem "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\obj\Release" -Recurse | Select-Object -First 20
           exit 1
         }
       
