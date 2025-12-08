@@ -54,9 +54,6 @@ jobs:
   deploy:
     runs-on: windows-latest
     needs: build
-    permissions:
-      id-token: write
-      contents: read
     environment:
       name: 'Production'
       url: https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
@@ -68,38 +65,17 @@ jobs:
         name: webapp
         path: webapp
         
-    - name: Azure Login via OIDC
+    - name: Azure Login with Service Principal
       uses: azure/login@v1
       with:
-        client-id: ${{ env.AZURE_CLIENT_ID }}
-        tenant-id: ${{ env.AZURE_TENANT_ID }}
-        subscription-id: ${{ env.AZURE_SUBSCRIPTION_ID }}
-      continue-on-error: false
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-    - name: Debug - Check environment and login
+    - name: Verify Azure Login
       run: |
-        Write-Host "=== Environment Variables ==="
-        Write-Host "Client ID: ${{ env.AZURE_CLIENT_ID }}"
-        Write-Host "Tenant ID: ${{ env.AZURE_TENANT_ID }}"
-        Write-Host "Subscription ID: ${{ env.AZURE_SUBSCRIPTION_ID }}"
-        Write-Host "`n=== Azure CLI Version ==="
-        az --version
-        Write-Host "`n=== Attempting to show account ==="
-        try {
-          az account show
-          Write-Host "✓ Account show succeeded"
-        } catch {
-          Write-Host "✗ Account show failed: $_"
-          Write-Host "`n=== Attempting manual token login ==="
-          $idToken = $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN
-          Write-Host "ID Token Request Token present: $($null -ne $idToken)"
-        }
-        Write-Host "`n=== Setting subscription explicitly ==="
-        az account set --subscription ${{ env.AZURE_SUBSCRIPTION_ID }}
-        Write-Host "`n=== Verifying account after set ==="
+        Write-Host "Verifying Azure account..."
         az account show
-        Write-Host "`n=== Checking webapp access ==="
-        az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo --query "{name:name,state:state,hostNames:hostNames}" -o json
+        Write-Host "`nChecking web app..."
+        az webapp show --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group rg-infra-winmig-eme-v-deepd-demo --query "{name:name,state:state}" -o json
         
     - name: Create deployment package
       run: |

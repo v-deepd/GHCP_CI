@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 5, 2025 - Added detailed debugging for login issue*
+*Last CI/CD deployment test: December 5, 2025 - Switched to Service Principal with client secret*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
