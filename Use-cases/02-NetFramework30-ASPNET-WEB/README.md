@@ -49,5 +49,5 @@ You can extend this application by:
 ## License
 
 ---
-*Last CI/CD deployment test: December 8, 2025 - Added manual Azure CLI login fallback*
+*Last CI/CD deployment test: December 8, 2025 - Using direct az login with detailed debugging*
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
