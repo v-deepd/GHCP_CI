@@ -207,3 +207,7 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# Azure secrets and credentials
+GITHUB_SECRET_SETUP.md
+*SECRET*.md
